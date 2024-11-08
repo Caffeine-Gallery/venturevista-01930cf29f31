@@ -44,6 +44,66 @@ section {
     padding: 80px 0;
 }
 
+.founder {
+    background-color: white;
+    padding: 100px 0;
+}
+
+.founder h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.founder h3 {
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.founder-image {
+    margin-bottom: 2rem;
+}
+
+.founder-image img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.founder-bio p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.founder-credentials {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.founder-credentials h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.founder-credentials ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.founder-credentials li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.founder-credentials li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
 .portfolio {
     background-color: #f8f9fa;
 }
@@ -145,5 +205,13 @@ footer {
     
     .filters .btn {
         margin-bottom: 0.5rem;
+    }
+
+    .founder-image {
+        text-align: center;
+    }
+
+    .founder-bio {
+        text-align: left;
     }
 }
