@@ -1,0 +1,11 @@
+type Company = 
+ record {
+   category: text;
+   description: text;
+   imageUrl: text;
+   name: text;
+ };
+service : {
+  getCompaniesByCategory: (text) -> (vec Company) query;
+  getPortfolio: () -> (vec Company) query;
+}

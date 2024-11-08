@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenDoor Venture Capital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">OpenDoor VC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ai-focus">AI Focus</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Investing in the Future</h1>
+            <p>OpenDoor Venture Capital backs revolutionary blockchain and AI technologies</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div class="filters mb-4">
+                <button class="btn btn-primary active" data-category="all">All</button>
+                <button class="btn btn-primary" data-category="Blockchain">Blockchain</button>
+                <button class="btn btn-primary" data-category="Artificial Intelligence">AI</button>
+            </div>
+            <div id="portfolio-grid" class="row">
+                <div class="col-12 text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-focus" class="ai-focus">
+        <div class="container">
+            <h2>AI Investment Focus</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Why AI?</h3>
+                    <p>We believe artificial intelligence is reshaping industries and creating unprecedented opportunities for growth and innovation.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Our Approach</h3>
+                    <p>We focus on early-stage AI companies with transformative potential in:</p>
+                    <ul>
+                        <li>Machine Learning Infrastructure</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                        <li>Autonomous Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OpenDoor Venture Capital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
