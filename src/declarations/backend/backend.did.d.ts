@@ -5,7 +5,9 @@ import type { IDL } from '@dfinity/candid';
 export interface Company {
   'name' : string,
   'description' : string,
+  'stage' : string,
   'imageUrl' : string,
+  'yearFounded' : string,
   'category' : string,
 }
 export interface _SERVICE {

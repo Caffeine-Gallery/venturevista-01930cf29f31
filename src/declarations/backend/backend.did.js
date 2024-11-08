@@ -2,7 +2,9 @@ export const idlFactory = ({ IDL }) => {
   const Company = IDL.Record({
     'name' : IDL.Text,
     'description' : IDL.Text,
+    'stage' : IDL.Text,
     'imageUrl' : IDL.Text,
+    'yearFounded' : IDL.Text,
     'category' : IDL.Text,
   });
   return IDL.Service({

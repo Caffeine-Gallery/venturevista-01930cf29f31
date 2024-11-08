@@ -21,12 +21,20 @@ async function loadPortfolio() {
         }
 
         portfolioGrid.innerHTML = companies.map(company => `
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="portfolio-item">
-                    <img src="${company.imageUrl}" alt="${company.name}" class="company-logo">
-                    <h3>${company.name}</h3>
-                    <p>${company.description}</p>
-                    <span class="category-badge">${company.category}</span>
+                    <div class="portfolio-header">
+                        <img src="${company.imageUrl}" alt="${company.name}" class="company-logo">
+                        <span class="stage-badge">${company.stage}</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>${company.name}</h3>
+                        <p>${company.description}</p>
+                        <div class="portfolio-footer">
+                            <span class="category-badge">${company.category}</span>
+                            <span class="year-founded">Founded ${company.yearFounded}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -40,24 +48,32 @@ async function loadPortfolio() {
     }
 }
 
-// Initialize portfolio
+// Handle scroll for navbar
+function handleScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadPortfolio();
 
     // Add click handlers for filter buttons
     document.querySelectorAll('.filters .btn').forEach(button => {
         button.addEventListener('click', (e) => {
-            // Remove active class from all buttons
             document.querySelectorAll('.filters .btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
-            // Add active class to clicked button
             e.target.classList.add('active');
-            
-            // Update current category and reload portfolio
             currentCategory = e.target.dataset.category;
             loadPortfolio();
         });
     });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 });

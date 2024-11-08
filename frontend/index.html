@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenDoor Venture Capital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">OpenDoor VC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -35,8 +36,8 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Investing in the Future</h1>
-            <p>OpenDoor Venture Capital backs revolutionary blockchain and AI technologies</p>
+            <h1>Investing in Tomorrow's Technology</h1>
+            <p>Backing visionary founders building the future of blockchain and artificial intelligence</p>
         </div>
     </section>
 
@@ -54,7 +55,6 @@
                     <div class="founder-bio">
                         <p>Ken Fried is the founder and Managing Partner of OpenDoor Venture Capital, bringing over two decades of experience in technology investments and entrepreneurship. With a particular focus on transformative technologies in blockchain and artificial intelligence, Ken has established himself as a leading voice in early-stage technology investments.</p>
                         <p>Prior to founding OpenDoor VC, Ken held senior positions at leading technology companies and investment firms, where he developed a deep understanding of emerging technologies and market dynamics. His investment philosophy centers on identifying and supporting visionary founders who are building the next generation of groundbreaking technologies.</p>
-                        <p>Ken's investment track record includes early investments in several unicorn companies, particularly in the blockchain and AI sectors. He serves on the boards of multiple portfolio companies and actively mentors founding teams to help them achieve their full potential.</p>
                         <div class="founder-credentials">
                             <h4>Education & Recognition</h4>
                             <ul>
@@ -72,13 +72,16 @@
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Our Portfolio</h2>
+            <h2>Portfolio Companies</h2>
             <div class="filters mb-4">
-                <button class="btn btn-primary active" data-category="all">All</button>
-                <button class="btn btn-primary" data-category="Blockchain">Blockchain</button>
-                <button class="btn btn-primary" data-category="Artificial Intelligence">AI</button>
+                <button class="btn btn-filter active" data-category="all">All</button>
+                <button class="btn btn-filter" data-category="Blockchain">Blockchain</button>
+                <button class="btn btn-filter" data-category="Artificial Intelligence">AI</button>
+                <button class="btn btn-filter" data-category="Quantum Computing">Quantum</button>
+                <button class="btn btn-filter" data-category="Healthcare">Healthcare</button>
+                <button class="btn btn-filter" data-category="Robotics">Robotics</button>
             </div>
-            <div id="portfolio-grid" class="row">
+            <div id="portfolio-grid" class="row g-4">
                 <div class="col-12 text-center">
                     <div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -90,21 +93,48 @@
 
     <section id="ai-focus" class="ai-focus">
         <div class="container">
-            <h2>AI Investment Focus</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <h3>Why AI?</h3>
-                    <p>We believe artificial intelligence is reshaping industries and creating unprecedented opportunities for growth and innovation.</p>
+                <div class="col-lg-6">
+                    <h2>AI Investment Focus</h2>
+                    <p class="lead">We believe artificial intelligence is reshaping industries and creating unprecedented opportunities for growth and innovation.</p>
+                    <div class="focus-areas">
+                        <div class="focus-area">
+                            <i class="fas fa-brain"></i>
+                            <h3>Machine Learning Infrastructure</h3>
+                            <p>Supporting the foundational layers of AI development</p>
+                        </div>
+                        <div class="focus-area">
+                            <i class="fas fa-comments"></i>
+                            <h3>Natural Language Processing</h3>
+                            <p>Advancing human-computer interaction</p>
+                        </div>
+                        <div class="focus-area">
+                            <i class="fas fa-eye"></i>
+                            <h3>Computer Vision</h3>
+                            <p>Revolutionizing visual data processing</p>
+                        </div>
+                        <div class="focus-area">
+                            <i class="fas fa-robot"></i>
+                            <h3>Autonomous Systems</h3>
+                            <p>Building the future of automation</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h3>Our Approach</h3>
-                    <p>We focus on early-stage AI companies with transformative potential in:</p>
-                    <ul>
-                        <li>Machine Learning Infrastructure</li>
-                        <li>Natural Language Processing</li>
-                        <li>Computer Vision</li>
-                        <li>Autonomous Systems</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="ai-stats">
+                        <div class="stat-card">
+                            <h4>$50M+</h4>
+                            <p>Invested in AI Startups</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>20+</h4>
+                            <p>AI Portfolio Companies</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>5</h4>
+                            <p>AI Unicorns</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,7 +142,28 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 OpenDoor Venture Capital. All rights reserved.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>OpenDoor VC</h4>
+                    <p>Investing in revolutionary technologies</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <p>info@opendoorvc.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 OpenDoor Venture Capital. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 

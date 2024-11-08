@@ -4,6 +4,8 @@ type Company =
    description: text;
    imageUrl: text;
    name: text;
+   stage: text;
+   yearFounded: text;
  };
 service : {
   getCompaniesByCategory: (text) -> (vec Company) query;
