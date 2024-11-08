@@ -1,3 +1,10 @@
+type TeamMember = 
+ record {
+   bio: text;
+   imageUrl: text;
+   name: text;
+   title: text;
+ };
 type Company = 
  record {
    category: text;
@@ -10,4 +17,5 @@ type Company =
 service : {
   getCompaniesByCategory: (text) -> (vec Company) query;
   getPortfolio: () -> (vec Company) query;
+  getTeam: () -> (vec TeamMember) query;
 }

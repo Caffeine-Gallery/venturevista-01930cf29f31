@@ -7,6 +7,12 @@ export const idlFactory = ({ IDL }) => {
     'yearFounded' : IDL.Text,
     'category' : IDL.Text,
   });
+  const TeamMember = IDL.Record({
+    'bio' : IDL.Text,
+    'title' : IDL.Text,
+    'name' : IDL.Text,
+    'imageUrl' : IDL.Text,
+  });
   return IDL.Service({
     'getCompaniesByCategory' : IDL.Func(
         [IDL.Text],
@@ -14,6 +20,7 @@ export const idlFactory = ({ IDL }) => {
         ['query'],
       ),
     'getPortfolio' : IDL.Func([], [IDL.Vec(Company)], ['query']),
+    'getTeam' : IDL.Func([], [IDL.Vec(TeamMember)], ['query']),
   });
 };
 export const init = ({ IDL }) => { return []; };

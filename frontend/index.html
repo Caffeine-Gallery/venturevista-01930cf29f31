@@ -3,67 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenDoor Venture Capital</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>OpenDoor Ventures</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">OpenDoor VC</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#founder">Founder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ai-focus">AI Focus</a>
-                    </li>
-                </ul>
+            <a href="#" class="logo">OpenDoor</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
             </div>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="container">
-            <h1>Investing in Tomorrow's Technology</h1>
-            <p>Backing visionary founders building the future of blockchain and artificial intelligence</p>
+            <h1>Building Tomorrow's Technology</h1>
+            <p>We partner with visionary founders to create transformative companies</p>
         </div>
     </section>
 
-    <section id="founder" class="founder">
+    <section id="about" class="about">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div class="founder-image">
-                        <img src="https://placehold.co/400x500?text=Ken+Fried" alt="Ken Fried" class="img-fluid rounded">
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>OpenDoor Ventures partners with exceptional founders building transformative companies in artificial intelligence, blockchain, and emerging technologies. We provide more than capital – we offer deep technical expertise, strategic guidance, and access to our global network.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>$500M+</h3>
+                        <p>Assets Under Management</p>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <h2>Ken Fried</h2>
-                    <h3>Founder & Managing Partner</h3>
-                    <div class="founder-bio">
-                        <p>Ken Fried is the founder and Managing Partner of OpenDoor Venture Capital, bringing over two decades of experience in technology investments and entrepreneurship. With a particular focus on transformative technologies in blockchain and artificial intelligence, Ken has established himself as a leading voice in early-stage technology investments.</p>
-                        <p>Prior to founding OpenDoor VC, Ken held senior positions at leading technology companies and investment firms, where he developed a deep understanding of emerging technologies and market dynamics. His investment philosophy centers on identifying and supporting visionary founders who are building the next generation of groundbreaking technologies.</p>
-                        <div class="founder-credentials">
-                            <h4>Education & Recognition</h4>
-                            <ul>
-                                <li>MBA, Harvard Business School</li>
-                                <li>BS in Computer Science, Stanford University</li>
-                                <li>Named to Forbes Midas List</li>
-                                <li>Regular speaker at major technology conferences</li>
-                            </ul>
-                        </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Portfolio Companies</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
                     </div>
                 </div>
             </div>
@@ -72,68 +57,30 @@
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Portfolio Companies</h2>
-            <div class="filters mb-4">
-                <button class="btn btn-filter active" data-category="all">All</button>
-                <button class="btn btn-filter" data-category="Blockchain">Blockchain</button>
-                <button class="btn btn-filter" data-category="Artificial Intelligence">AI</button>
-                <button class="btn btn-filter" data-category="Quantum Computing">Quantum</button>
-                <button class="btn btn-filter" data-category="Healthcare">Healthcare</button>
-                <button class="btn btn-filter" data-category="Robotics">Robotics</button>
-            </div>
-            <div id="portfolio-grid" class="row g-4">
-                <div class="col-12 text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            </div>
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid"></div>
         </div>
     </section>
 
-    <section id="ai-focus" class="ai-focus">
+    <section id="team" class="team">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>AI Investment Focus</h2>
-                    <p class="lead">We believe artificial intelligence is reshaping industries and creating unprecedented opportunities for growth and innovation.</p>
-                    <div class="focus-areas">
-                        <div class="focus-area">
-                            <i class="fas fa-brain"></i>
-                            <h3>Machine Learning Infrastructure</h3>
-                            <p>Supporting the foundational layers of AI development</p>
-                        </div>
-                        <div class="focus-area">
-                            <i class="fas fa-comments"></i>
-                            <h3>Natural Language Processing</h3>
-                            <p>Advancing human-computer interaction</p>
-                        </div>
-                        <div class="focus-area">
-                            <i class="fas fa-eye"></i>
-                            <h3>Computer Vision</h3>
-                            <p>Revolutionizing visual data processing</p>
-                        </div>
-                        <div class="focus-area">
-                            <i class="fas fa-robot"></i>
-                            <h3>Autonomous Systems</h3>
-                            <p>Building the future of automation</p>
-                        </div>
+            <h2>Our Team</h2>
+            <div class="team-grid"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Innovation Drive<br>San Francisco, CA 94105</p>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ai-stats">
-                        <div class="stat-card">
-                            <h4>$50M+</h4>
-                            <p>Invested in AI Startups</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>20+</h4>
-                            <p>AI Portfolio Companies</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>5</h4>
-                            <p>AI Unicorns</p>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@opendoorvc.com</p>
                     </div>
                 </div>
             </div>
@@ -142,32 +89,19 @@
 
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>OpenDoor VC</h4>
-                    <p>Investing in revolutionary technologies</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <p>info@opendoorvc.com</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-logo">OpenDoor</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <p>&copy; 2024 OpenDoor Venture Capital. All rights reserved.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OpenDoor Ventures. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 </html>

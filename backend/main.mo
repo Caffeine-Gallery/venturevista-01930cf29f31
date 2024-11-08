@@ -1,10 +1,18 @@
 import Bool "mo:base/Bool";
 import Int "mo:base/Int";
+import Principal "mo:base/Principal";
 
 import Array "mo:base/Array";
 import Text "mo:base/Text";
 
 actor {
+    type TeamMember = {
+        name: Text;
+        title: Text;
+        bio: Text;
+        imageUrl: Text;
+    };
+
     type Company = {
         name: Text;
         description: Text;
@@ -14,6 +22,27 @@ actor {
         stage: Text;
     };
 
+    private stable var teamMembers : [TeamMember] = [
+        {
+            name = "Ken Fried";
+            title = "Founder & Managing Partner";
+            bio = "Veteran investor with over 20 years of experience in technology and venture capital.";
+            imageUrl = "https://placehold.co/400x500?text=Ken+Fried"
+        },
+        {
+            name = "Sarah Chen";
+            title = "Partner";
+            bio = "Former tech executive specializing in AI and blockchain investments.";
+            imageUrl = "https://placehold.co/400x500?text=Sarah+Chen"
+        },
+        {
+            name = "David Park";
+            title = "Principal";
+            bio = "Technology researcher focused on emerging technologies and market analysis.";
+            imageUrl = "https://placehold.co/400x500?text=David+Park"
+        }
+    ];
+
     private stable var portfolioCompanies : [Company] = [
         {
             name = "Internet Computer";
@@ -21,14 +50,6 @@ actor {
             category = "Blockchain";
             imageUrl = "https://cryptologos.cc/logos/internet-computer-icp-logo.png";
             yearFounded = "2016";
-            stage = "Growth"
-        },
-        {
-            name = "Ethereum";
-            description = "Leading smart contract platform powering DeFi and NFTs";
-            category = "Blockchain";
-            imageUrl = "https://cryptologos.cc/logos/ethereum-eth-logo.png";
-            yearFounded = "2015";
             stage = "Growth"
         },
         {
@@ -46,40 +67,12 @@ actor {
             imageUrl = "https://placehold.co/400x400?text=Quantum+Dynamics";
             yearFounded = "2020";
             stage = "Series B"
-        },
-        {
-            name = "CyberShield";
-            description = "Next-generation cybersecurity powered by AI";
-            category = "Cybersecurity";
-            imageUrl = "https://placehold.co/400x400?text=CyberShield";
-            yearFounded = "2019";
-            stage = "Series C"
-        },
-        {
-            name = "BioTech Solutions";
-            description = "AI-driven drug discovery and development platform";
-            category = "Healthcare";
-            imageUrl = "https://placehold.co/400x400?text=BioTech+Solutions";
-            yearFounded = "2018";
-            stage = "Growth"
-        },
-        {
-            name = "Robotics Plus";
-            description = "Advanced robotics systems for manufacturing and logistics";
-            category = "Robotics";
-            imageUrl = "https://placehold.co/400x400?text=Robotics+Plus";
-            yearFounded = "2017";
-            stage = "Series B"
-        },
-        {
-            name = "DataFlow AI";
-            description = "Enterprise-grade machine learning infrastructure";
-            category = "Artificial Intelligence";
-            imageUrl = "https://placehold.co/400x400?text=DataFlow+AI";
-            yearFounded = "2022";
-            stage = "Seed"
         }
     ];
+
+    public query func getTeam() : async [TeamMember] {
+        teamMembers
+    };
 
     public query func getPortfolio() : async [Company] {
         portfolioCompanies

@@ -1,79 +1,85 @@
 import { backend } from "declarations/backend";
 
-let currentCategory = "all";
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-async function loadPortfolio() {
-    try {
-        const portfolioGrid = document.getElementById('portfolio-grid');
-        portfolioGrid.innerHTML = `
-            <div class="col-12 text-center">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        `;
+// Mobile menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-        let companies;
-        if (currentCategory === "all") {
-            companies = await backend.getPortfolio();
-        } else {
-            companies = await backend.getCompaniesByCategory(currentCategory);
-        }
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
 
-        portfolioGrid.innerHTML = companies.map(company => `
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <img src="${company.imageUrl}" alt="${company.name}" class="company-logo">
-                        <span class="stage-badge">${company.stage}</span>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>${company.name}</h3>
-                        <p>${company.description}</p>
-                        <div class="portfolio-footer">
-                            <span class="category-badge">${company.category}</span>
-                            <span class="year-founded">Founded ${company.yearFounded}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    } catch (error) {
-        console.error("Error loading portfolio:", error);
-        document.getElementById('portfolio-grid').innerHTML = `
-            <div class="col-12">
-                <div class="alert alert-danger">Error loading portfolio. Please try again later.</div>
-            </div>
-        `;
-    }
-}
-
-// Handle scroll for navbar
-function handleScroll() {
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
+});
+
+// Load portfolio companies
+async function loadPortfolio() {
+    try {
+        const companies = await backend.getPortfolio();
+        const portfolioGrid = document.querySelector('.portfolio-grid');
+        
+        portfolioGrid.innerHTML = companies.map(company => `
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="${company.imageUrl}" alt="${company.name}">
+                </div>
+                <div class="portfolio-info">
+                    <h3>${company.name}</h3>
+                    <p>${company.description}</p>
+                    <div class="portfolio-meta">
+                        <span class="category">${company.category}</span>
+                        <span class="stage">${company.stage}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading portfolio:', error);
+    }
+}
+
+// Load team members
+async function loadTeam() {
+    try {
+        const team = await backend.getTeam();
+        const teamGrid = document.querySelector('.team-grid');
+        
+        teamGrid.innerHTML = team.map(member => `
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="${member.imageUrl}" alt="${member.name}">
+                </div>
+                <div class="member-info">
+                    <h3>${member.name}</h3>
+                    <h4>${member.title}</h4>
+                    <p>${member.bio}</p>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading team:', error);
+    }
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadPortfolio();
-
-    // Add click handlers for filter buttons
-    document.querySelectorAll('.filters .btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            document.querySelectorAll('.filters .btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
-            currentCategory = e.target.dataset.category;
-            loadPortfolio();
-        });
-    });
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    loadTeam();
 });
